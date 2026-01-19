@@ -1,0 +1,86 @@
+[
+  {
+    "value": "CLASS_01",
+    "label": "Pengecekan Baut dan Mur"
+  },
+  {
+    "value": "CLASS_02",
+    "label": "Inspeksi Sistem Hidrolik"
+  },
+  {
+    "value": "CLASS_03",
+    "label": "Pemeriksaan Sistem Pneumatik"
+  },
+  {
+    "value": "CLASS_04",
+    "label": "Kalibrasi Sensor Suhu"
+  },
+  {
+    "value": "CLASS_05",
+    "label": "Verifikasi Sensor Tekanan"
+  },
+  {
+    "value": "CLASS_06",
+    "label": "Pengecekan Level Pelumas"
+  },
+  {
+    "value": "CLASS_07",
+    "label": "Inspeksi Kabel dan Konektor"
+  },
+  {
+    "value": "CLASS_08",
+    "label": "Pemeriksaan Motor Listrik"
+  },
+  {
+    "value": "CLASS_09",
+    "label": "Uji Fungsi Tombol Darurat"
+  },
+  {
+    "value": "CLASS_10",
+    "label": "Inspeksi Kebersihan Mesin"
+  },
+  {
+    "value": "CLASS_11",
+    "label": "Pemeriksaan Filter Udara"
+  },
+  {
+    "value": "CLASS_12",
+    "label": "Pengecekan Sistem Pendingin"
+  },
+  {
+    "value": "CLASS_13",
+    "label": "Analisis Vibrasi Mesin"
+  },
+  {
+    "value": "CLASS_14",
+    "label": "Inspeksi Visual Komponen Kritis"
+  },
+  {
+    "value": "CLASS_15",
+    "label": "Uji Kinerja Konveyor"
+  },
+  {
+    "value": "CLASS_16",
+    "label": "Pemeriksaan Sabuk dan Rantai"
+  },
+  {
+    "value": "CLASS_17",
+    "label": "Verifikasi Fungsi PLC"
+  },
+  {
+    "value": "CLASS_18",
+    "label": "Pengecekan Grounding Listrik"
+  },
+  {
+    "value": "CLASS_19",
+    "label": "Inspeksi Alat Keselamatan (APAR)"
+  },
+  {
+    "value": "CLASS_20",
+    "label": "Pemeriksaan Panel Kontrol"
+  },
+  {
+    "label": "Iya",
+    "value": "CLASS_21"
+  }
+]

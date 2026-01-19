@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-qdc
+spec:
+  selector:
+    matchLabels:
+      app: ms-qdc
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ms-qdc
+    spec:
+      containers:
+        - name: ms-qdc
+          image: localhost:32000/ms-qdc
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-qdc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: ms-qdc
+  type: ClusterIP

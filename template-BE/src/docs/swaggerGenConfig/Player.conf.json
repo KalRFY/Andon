@@ -1,0 +1,9 @@
+{
+    "swaggerDefinition": {
+      "info": {
+        "title": "PlayerApi api",
+        "version": "1.0.0"
+      }
+    },
+    "apis": ["D:/FUJITSU/2022-TMMIN/TMCP/ms-node/ms-node/src/routes/Player.route.js"]
+  }

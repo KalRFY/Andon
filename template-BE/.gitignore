@@ -1,0 +1,39 @@
+# Dependencies
+node_modules
+/template-BE/upload
+
+# yarn error logs
+yarn-error.log
+yarn.lock
+
+# Environment varibales
+# .env*
+# !.env*.example
+
+# Code coverage
+coverage
+
+#package.json
+package.lock.json
+package-lock.json
+.husky/.gitignore
+
+*.jpg
+*.jpeg
+*.png
+
+# Ignore all Excel files
+*.xls
+*.xlsx
+*.xlsm
+*.xlsb
+*.xltx
+*.xltm
+
+# Ignore temporary Excel files (created when Excel files are open)
+~$*.xls
+~$*.xlsx
+~$*.xlsm
+~$*.xlsb
+~$*.xltx
+~$*.xltm
