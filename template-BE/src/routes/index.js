@@ -10,7 +10,6 @@ const memberRoutes = require('./smartandon/member');
 const machineStopInputRoutes = require('./smartandon/machineStopInput.controller');
 
 const problemRoutes = require('./smartandon/problem');
-const oeeRoutes = require('./smartandon/OEE');
 const mtbfmttrRoutes = require('./smartandon/mtbfmttr');
 const realtimeParetoRoutes = require('./smartandon/realtimePareto');
 const summaryRoutes = require('./smartandon/summary');
@@ -28,12 +27,8 @@ const temporaryActionListRoutes = require('./smartandon/temporaryactionlist');
 const focusThemaRoutes = require('./smartandon/focusThema');
 const floatingPlungerTipsRoutes = require('./smartandon/floatingPlungerTips');
 const frontendRoutes = require('./smartandon/frontend');
-
-const GaugeRoute = require('./qdc/Guage.route');
-const CommonRoute = require('./qdc/Common.route');
 const cameraRoutes = require('./camera.route');
 const inspectionRoutes = require('./inspection.route');
-const { path } = require('../app');
 
 const router = express.Router();
 
@@ -45,14 +40,6 @@ const defaultRoutes = [
   {
     path: '/camera',
     route: cameraRoutes,
-  },
-  {
-    path: '/gauge',
-    route: GaugeRoute,
-  },
-  {
-    path: '/common',
-    route: CommonRoute,
   },
   {
     path: '/dashboard',
@@ -85,10 +72,6 @@ const defaultRoutes = [
   {
     path: '/mtbfmttr',
     route: mtbfmttrRoutes,
-  },
-  {
-    path: '/smartandon',
-    route: oeeRoutes,
   },
   {
     path: '/smartandon',

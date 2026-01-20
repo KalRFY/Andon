@@ -3,13 +3,13 @@
 /* eslint-disable import/no-dynamic-require */
 
 const Sequelize = require('sequelize');
-const { qdc_pg_db, qdc_db } = require('../config/config');
+const { db } = require('../config/config');
 
 // PostgreSQL connection (commented out)
 // const sequelize = new Sequelize(qdc_pg_db.database, qdc_pg_db.username, qdc_pg_db.password, qdc_pg_db);
 
 // MySQL connection
-const sequelize = new Sequelize(qdc_db.database, qdc_db.username, qdc_db.password, qdc_db);
+const sequelize = new Sequelize(db.database, db.username, db.password, db);
 
 const QccMTypes = require('./QccMTypes')(sequelize);
 const newMachineInput = require('./newMachineInput')(sequelize);

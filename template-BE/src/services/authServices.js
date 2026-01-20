@@ -1,6 +1,13 @@
-const { token } = require('morgan');
 const { sequelize } = require('../models');
 const { generateLoginToken } = require('../utils/authUtils');
+
+const getLastId = async () => {
+  const query = `SELECT MAX(fid) AS lastId FROM tb_mt_member`;
+  const result = await sequelize.query(query, {
+    type: sequelize.QueryTypes.SELECT,
+  });
+  return result[0].lastId || 0;
+};
 
 const registerService = async ({ name, noreg, phone }) => {
   const checkUserQuery = `SELECT fname FROM tb_mt_member WHERE fnoreg = :noreg LIMIT 1`;
@@ -54,14 +61,6 @@ const loginService = async ({ noreg, password }) => {
     noreg: user[0].fnoreg,
     token: jwtToken,
   };
-};
-
-const getLastId = async () => {
-  const query = `SELECT MAX(fid) AS lastId FROM tb_mt_member`;
-  const result = await sequelize.query(query, {
-    type: sequelize.QueryTypes.SELECT,
-  });
-  return result[0].lastId || 0;
 };
 
 module.exports = {

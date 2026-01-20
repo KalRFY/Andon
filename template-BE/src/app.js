@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 const helmet = require('helmet');
 const xss = require('xss-clean');
@@ -5,8 +6,6 @@ const compression = require('compression');
 const cors = require('cors');
 const passport = require('passport');
 const httpStatus = require('http-status');
-const fileUpload = require('express-fileupload');
-// const schedule = require('node-schedule');
 const bodyParser = require('body-parser');
 const path = require('path');
 const config = require('./config/config');
@@ -16,7 +15,6 @@ const { authLimiter } = require('./middlewares/rateLimiter');
 const routes = require('./routes');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
-const oeeSyncService = require('./services/oeeSync.service');
 
 const app = express();
 const dashboardRoutes = require('./routes/smartandon/dashboard');
@@ -95,10 +93,3 @@ app.use(errorConverter);
 app.use(errorHandler);
 
 module.exports = app;
-
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-  // Start the OEE sync service
-  oeeSyncService.startScheduledSync();
-});

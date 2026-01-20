@@ -1,8 +1,7 @@
 const app = require('./app');
 const config = require('./config/config');
 const logger = require('./config/logger');
-const seedDashboardData = require('./seeders/dashboardDataSeeder');
-const { sequelize } = require('./models');
+const sequelize = require('./config/mysql');
 
 const startServer = async () => {
   try {
@@ -10,16 +9,21 @@ const startServer = async () => {
     logger.info('Testing database connection...');
     await sequelize.authenticate();
     logger.info('Database connection established successfully.');
-    
+
     // Sync all models with the database, creating or altering tables as needed
     logger.info('Syncing database models...');
     await sequelize.sync({ alter: true });
     logger.info('Database models synced successfully.');
-    
-    await seedDashboardData();
-    const server = app.listen(config.port, () => {
-      logger.info(`Listening to port ${config.port}`);
-    });
+
+    const server = app.listen(
+      {
+        port: config.port,
+        host: config.host,
+      },
+      () => {
+        logger.info(`Server is running on ${config.host}:${config.port} in ${config.env} mode`);
+      }
+    );
 
     const exitHandler = () => {
       if (server) {
