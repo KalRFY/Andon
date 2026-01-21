@@ -67,12 +67,12 @@ app.use('/dashboard', dashboardRoutes);
 // app.use('/problem', dashboardRoutes);
 
 // Serve static files from the built frontend directory
-app.use(express.static(path.join(__dirname, '../../template-FE/dist')));
+// app.use(express.static(path.join(__dirname, '../../template-FE/dist')));
 
 // Catch all handler: send back the index.html for SPA routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../template-FE/dist/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../template-FE/dist/index.html'));
+// });
 
 // Handle Chrome DevTools specific route to prevent errors
 app.get('/.well-known/appspecific/com.chrome.devtools.json', (req, res) => {

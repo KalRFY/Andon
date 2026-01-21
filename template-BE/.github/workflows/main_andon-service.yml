@@ -1,4 +1,4 @@
-name: Build and deploy Node.js app to Azure - Andon-Service
+name: Build and deploy Node.js app to Azure Web App - Andon-Service
 
 on:
   push:
@@ -6,58 +6,50 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Set up Node.js version
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-          cache: 'npm'
-          cache-dependency-path: './template-be/package-lock.json'
 
       - name: npm install and build
-        working-directory: ./template-be 
         run: |
           npm install
           npm run build --if-present
-          npm prune --production 
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: . 
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: node-app
+          path: .
 
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8970244C8F7D45AE8E5B3A63D9F76BFC }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3A1ADE882EB041D4B6ECA50F6E514993 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0997CDDEA0644A9D8518B4A5B6D54B01 }}
 
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'Andon-Service'
