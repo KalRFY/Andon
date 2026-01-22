@@ -7,13 +7,7 @@
       })
   ">
     <CSidebarBrand>
-      <template v-if="showAndonText">
-        <div class="sidebar-brand-text sidebar-andon-text">ANDON</div>
-      </template>
-      <template v-else>
-        <img src="../assets/brand/Toyota_logo.png" class="img-fluid sidebar-brand-full" width="200" height="200" />
-        <img src="../assets/brand/Toyota_logo.png" class="sidebar-brand-narrow" width="36" height="10" />
-      </template>
+      <div class="sidebar-brand-text sidebar-andon-text">ANDON</div>
     </CSidebarBrand>
     <AppSidebarNav v-bind:nav="nav" />
     <CSidebarToggler id="SidebarToggler" class="d-none d-lg-flex" @click="$store.commit('toggleUnfoldable')" />
@@ -89,7 +83,7 @@
           {
             component: 'CNavItem',
             to: '/app/Smartandon',
-            name: 'Smartandon',
+            name: 'Andon',
             icon: 'cilFactory',
             parentId: 'ROOT',
 
@@ -208,65 +202,6 @@
                 name: 'Edit Data Smartandon',
                 icon: 'cilClipboard',
                 parentId: 'ROOT',
-              },
-              {
-                component: 'CNavItem',
-                to: '/app/order-spareparts-redirect',
-                name: 'Order Spareparts',
-                icon: 'cilCart',
-                parentId: 'ROOT',
-              },
-              {
-                component: 'CNavItem',
-                to: '/app/tpm-redirect',
-                name: 'TPM System',
-                icon: 'cilMemory',
-                parentId: 'ROOT',
-              },
-              {
-                component: 'CNavItem',
-                to: '/app/RobotInspection',
-                name: 'Robot Inspection',
-                icon: 'cilJustifyLeft',
-                parentId: 'ROOT',
-
-                items: [
-                  {
-                    component: 'CNavItem',
-                    to: '/app/RobotInspection',
-                    name: 'Robot Inspection',
-                    icon: 'cilSpeedometer',
-                    parentId: 'ROOT',
-                  },
-                  {
-                    component: 'CNavItem',
-                    to: '/app/CameraSettings',
-                    name: 'Camera Settings',
-                    icon: 'cilCameraControl',
-                    parentId: 'ROOT',
-                  },
-                  {
-                    component: 'CNavItem',
-                    to: '/app/CollectingSample',
-                    name: 'Collecting Sample',
-                    icon: 'cilCamera',
-                    parentId: 'ROOT',
-                  },
-                  {
-                    component: 'CNavItem',
-                    to: '/app/InspectionClass',
-                    name: 'Inspection Class',
-                    icon: 'cilBrowser',
-                    parentId: 'ROOT',
-                  },
-                  {
-                    component: 'CNavItem',
-                    to: '/app/HistoryInspection',
-                    name: 'History Inspection',
-                    icon: 'cilHistory',
-                    parentId: 'ROOT',
-                  },
-                ],
               },
             ]
           }

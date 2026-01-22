@@ -1776,20 +1776,6 @@ export default {
         color: 'dark',
         route: '/app/EditDataSmartandon',
       },
-      {
-        title: 'Order Spareparts',
-        icon: 'cilCart',
-        description: 'Order Spareparts',
-        color: 'warning',
-        route: '/app/order-spareparts-redirect',
-      },
-      {
-        title: 'TPM System',
-        icon: 'cilMemory',
-        description: 'TPM System management',
-        color: 'info',
-        route: '/app/tpm-redirect',
-      },
     ]
 
     const navigateTo = (route) => {

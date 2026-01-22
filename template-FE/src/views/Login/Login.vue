@@ -60,16 +60,6 @@
             >Register</a>
           </div>
         </div>
-
-        <div v-if="showElements" class="image-side">
-           <div class="image-wrapper">
-            <img 
-              :src="loginPhoto" 
-              alt="Plant 1" 
-              class="login-image" 
-            />
-           </div>
-        </div>
       </div>
     </div>
 

@@ -10,9 +10,6 @@
       <CDropdownHeader component="h6" class="fw-semibold py-2 mt-2 mb-2">
         Account
       </CDropdownHeader>
-      <CDropdownItem href="/#/sc/profile">
-        <CIcon icon="cil-user" /> Profile
-      </CDropdownItem>
       <CDropdownDivider />
       <CDropdownItem href="#" @click="logout()">
         <CIcon icon="cilAccountLogout" /> Logout
