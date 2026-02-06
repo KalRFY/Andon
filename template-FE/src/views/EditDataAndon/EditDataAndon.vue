@@ -9,7 +9,6 @@
         <CTabs :activeItemKey="activeTab">
           <CTabList variant="tabs">
             <CTab aria-controls="machine-tab-pane" :itemKey="'machine'">Machine</CTab>
-            <CTab aria-controls="maker-tab-pane" :itemKey="'maker'">Maker</CTab>
           </CTabList>
           <CTabContent>
             <CTabPanel class="py-3" aria-labelledby="machine-tab-pane" :itemKey="'machine'">

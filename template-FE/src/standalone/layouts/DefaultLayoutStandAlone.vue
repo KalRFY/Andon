@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      isBgBlurred: true,
+      isBgBlurred: false,
     }
   },
   setup() {
