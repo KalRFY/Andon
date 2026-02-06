@@ -1,14 +1,10 @@
 <template>
   <CFooter v-if="!isMobile" class="sticky-bottom">
     <div>
-      <label>Smartandon</label>
+      <label>Andon</label>
       <span class="ms-1"
         >&copy; {{ new Date().getFullYear() }}</span
       >
-    </div>
-    <div class="ms-auto">
-      <span class="me-1" target="_blank">Developed by</span>
-      <a href="https://www.linkedin.com/in/khalif-raflika-868404246/">M. Khalif Raflika</a>
     </div>
   </CFooter>
 </template>
